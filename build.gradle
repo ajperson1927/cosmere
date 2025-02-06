@@ -87,6 +87,7 @@ ext {
 			"loader_version"   : loader_version_range,
 			"patchouli_version": patchouli_version_range,
 			"jade_version"     : jade_version_range,
+			"top_version"      : top_version_range,
 			"jei_version"      : jei_version_range,
 			"curios_version"   : curios_version_range
 	]
@@ -455,6 +456,8 @@ dependencies {
 	compileOnly fg.deobf("curse.maven:jade-api-324717:${jade_api_id}")
 	runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
 
+	implementation fg.deobf("curse.maven:the-one-probe-245211:${top_id}")
+
 	runtimeOnly fg.deobf("curse.maven:soulhome-574511:${soulhome_id}")
 
 	runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${minecraft_version}-${curios_version}")
@@ -702,6 +705,7 @@ if (System.getenv("CURSEFORGE_API_TOKEN") != null || project.hasProperty('cursef
 			//Add optional deps
 			addOptional(
 					'jade',
+					'the-one-probe',
 					'curios',
 					'patchouli',
 					'jei',
@@ -747,6 +751,7 @@ void uploadSecondaryCurseProject(TaskPublishCurseForge task, long projectId, Str
 		addRequirement('cosmere')
 		addOptional(
 				'jade',
+				'the-one-probe',
 				'curios',
 				'patchouli',
 				'jei',
@@ -812,6 +817,7 @@ if (System.getenv("MODRINTH_API_TOKEN") != null || project.hasProperty('modrinth
 				new ModDependency("vvuO3ImH", "required"),//Curios
 				new ModDependency("nU0bVIaL", "optional"),//Patchouli
 				new ModDependency("nvQzSEkH", "optional"),//Jade
+				new ModDependency("Eyw0UxEx", "optional"),//The One Probe
 				new ModDependency("u6dRKJwZ", "optional"),//JEI
 				new ModDependency("u1pejmgA", "optional"),//allomancy
 				new ModDependency("OX40vFNo", "optional"),//feruchemy
@@ -853,6 +859,7 @@ def createSecondaryModrinthUpload(String output, String targetProjectId, TaskPro
 						new ModDependency("vvuO3ImH", "required"),//Curios
 						new ModDependency("nU0bVIaL", "optional"),//Patchouli
 						new ModDependency("nvQzSEkH", "optional"),//Jade
+						new ModDependency("Eyw0UxEx", "optional"),//The One Probe
 						new ModDependency("u6dRKJwZ", "optional"),//JEI
 						new ModDependency("u1pejmgA", "optional"),//allomancy
 						new ModDependency("OX40vFNo", "optional"),//feruchemy
