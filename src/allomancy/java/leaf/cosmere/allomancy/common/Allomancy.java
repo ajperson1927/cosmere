@@ -6,7 +6,7 @@ package leaf.cosmere.allomancy.common;
 
 import leaf.cosmere.allomancy.common.capabilities.AllomancySpiritwebSubmodule;
 import leaf.cosmere.allomancy.common.capabilities.world.IScadrial;
-import leaf.cosmere.allomancy.common.compat.theoneprobe.BronzeSeekerOneProbeCompat;
+import leaf.cosmere.allomancy.common.compat.theoneprobe.TheOneProbeCompat;
 import leaf.cosmere.allomancy.common.config.AllomancyConfigs;
 import leaf.cosmere.allomancy.common.network.AllomancyPacketHandler;
 import leaf.cosmere.allomancy.common.registries.*;
@@ -44,7 +44,7 @@ public class Allomancy implements IModModule
 		modBus.addListener(this::onConfigReload);
 		modBus.addListener(this::commonSetup);
 		modBus.addListener(this::onAddCaps);
-		modBus.addListener(BronzeSeekerOneProbeCompat::interModEnqueue);
+		modBus.addListener(TheOneProbeCompat::interModEnqueue);
 
 		AllomancyItems.ITEMS.register(modBus);
 		AllomancyAttributes.ATTRIBUTES.register(modBus);
